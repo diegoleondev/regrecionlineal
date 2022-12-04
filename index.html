@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora - RL</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="pages/home.html"><i class="icon-home"></i></a>
+      <a href="index.html"><i class="icon-calculator"></i></a>
+      <a href="pages/about.html"><i class="icon-github"></i></a>
+    </nav>
+    <article class="article article-dashboard">
+      <section id="top-section" class="top-section section">
+        <h1>Regrecion Lineal</h1>
+      </section>
+      <section class="section section-input">
+        <p>Ingrese los datos solicitados:</p>
+        <label>
+          Probabilidad:
+          <input id="probability" type="number" class="input" />
+        </label>
+        <div id="table-container" class="table">
+          <div class="table__row">
+            <i class="table__cell bold">#</i>
+            <i class="table__cell bold">Independiente</i>
+            <i class="table__cell bold">Dependiente</i>
+          </div>
+        </div>
+        <nav id="dahsboard">
+          <button id="btn-calculate" class="button">Calcular</button>
+          <button id="btn-example" class="button">Ejemplo</button>
+          <button id="btn-clear" class="button">Limpiar</button>
+        </nav>
+      </section>
+      <section class="section section-data">
+        <canvas id="canvas"></canvas>
+        <section id="operations" class="operations"></section>
+      </section>
+    </article>
+
+    <script type="module" src="lib/PopMsg.js"></script>
+    <script type="module" src="lib/Loading/index.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #3366ff;
+  --primary-100: #d6e4ff;
+  --primary-200: #adc8ff;
+  --secondary: #fff;
+  --info: #4fa1ff;
+  --success: #34c144;
+  --warning: #ffb13d;
+  --danger: #ff4538;
+  --text: #374957;
+
+  --shadow-color: 0deg 0% 63%;
+
+  --shadow: 0 0 5px hsl(var(--shadow-color) / 0.36),
+    1.4px 1.3px 2.1px -0.8px hsl(var(--shadow-color) / 0.36),
+    3.6px 3.2px 5.4px -1.7px hsl(var(--shadow-color) / 0.36),
+    8.7px 7.8px 13.1px -2.5px hsl(var(--shadow-color) / 0.36);
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  color: var(--text);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 50px 1fr;
+
+  background-color: var(--primary-100);
+}
+
+.navbar {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+
+  background-color: var(--primary);
+}
+/* ICONS -------------------------------------------------------------------- */
+[class^="icon-"] {
+  width: 44px;
+  aspect-ratio: 1/1;
+
+  display: inline-block;
+  position: relative;
+  border-radius: 0.5em;
+}
+
+[class^="icon-"]::after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  filter: invert(100%) sepia(5%) saturate(7500%) hue-rotate(287deg)
+    brightness(122%) contrast(115%);
+}
+
+[class^="icon-"]:hover {
+  background-color: white;
+}
+[class^="icon-"]:hover:after {
+  filter: invert(34%) sepia(39%) saturate(6028%) hue-rotate(219deg)
+    brightness(100%) contrast(104%);
+}
+
+.icon-calculator::after {
+  background-image: url(../assets/calculator-fill.svg);
+}
+
+.icon-github::after {
+  background-image: url(../assets/github.svg);
+}
+
+.icon-home::after {
+  background-image: url(../assets/house-fill.svg);
+}
+
+/* RESPONSIVE --------------------------------------------------------------- */
+
+@media (max-width: 950px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px max-content;
+  }
+
+  .article-dashboard {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: "top-section" "inputs" "print";
+  }
+
+  #canvas {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .operations {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
