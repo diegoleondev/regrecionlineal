@@ -2,17 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Regrecion Lineal - Calculadora</title>
+
+    <!-- SEO -->
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, nofollow" />
+    <meta name="copyright" content="Diego Leon © 2022" />
+    <link rel="canonical" href="www.regrecionlineal.ml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora - RL</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO inf -->
+    <meta name="author" content="Joshua y Diego Leon" />
+    <meta
+      name="description"
+      content="Calculadora para la regrecion Lineal simple"
+    />
+    <meta name="keywords" content="calculadora, regrecion, lineal" />
+
+    <!-- Mobile -->
+    <meta name="theme-color" content="#3366ff" />
+    <link rel="icon" href="./assets/icon.ico" />
+    <link rel="apple-touch-icon" href="./assets/icon.ico" />
+
+    <!-- Social -->
+    <meta property="og:title" content="Regrecion Lineal - Calculadora" />
+    <meta
+      property="og:description"
+      content="Calculadora para la regrecion Lineal simple"
+    />
+    <meta property="og:image" content="https://i.ibb.co/PgCTjjp/image.png" />
+    <meta property="og:url" content="www.regrecionlineal.ml" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@dalldev" />
+
+    <!-- Loading -->
+    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="styles/global.css" />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
+    <script id="MathJax-script" async src="lib/MathJax.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -26,7 +53,7 @@
       </section>
       <section class="section section-input">
         <p>Ingrese los datos solicitados:</p>
-        <label>
+        <label class="bold">
           Probabilidad:
           <input id="probability" type="number" class="input" />
         </label>

@@ -130,11 +130,22 @@ export default function table(element, on) {
 
     current.setAxis(value);
 
+    const currentCordinate = cordinates[current.index - 1];
+    if (current.axis === "y" && isNaN(currentCordinate.x)) {
+      target.parentNode
+        .querySelector("[data-axis='x']")
+        .classList.add("danger-input-text");
+
+      console.log(target.parentNode);
+      on({
+        type: TYPES.DANGER,
+        state: `Los valores de 'x' e 'y' deben ser números. \n Verifique [x ${current.index}] = NaN.`,
+      });
+      problems[`x-${current.index}`] = true;
+    }
+
     // Agregar una -FILA- nueva cuando se -llena X e Y-
     if (current.index == cordinates.length) {
-      const currentCordinate = cordinates[current.index - 1];
-
-      console.log(currentCordinate);
       if (!(currentCordinate.x >= 0) || !(currentCordinate.y >= 0)) return;
       createRow(current.index + 1);
 

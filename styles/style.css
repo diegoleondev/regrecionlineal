@@ -17,11 +17,6 @@ input[type="number"] {
   background-color: transparent;
 }
 
-button {
-  outline: none;
-  border: none;
-}
-
 i {
   font-style: normal;
 }
@@ -30,13 +25,10 @@ i {
   font-weight: bold;
 }
 
-.button {
-  padding: 0.5em;
-}
-
 .input {
   border-bottom: solid 2px var(--primary-100);
 }
+
 .danger-input-text {
   border: dotted 2px var(--danger) !important;
 }
@@ -133,10 +125,6 @@ i {
   text-indent: 1em;
 }
 
-.table__cell:hover {
-  background-color: var(--primary-100);
-}
-
 input[class~="table__cell"]:focus {
   outline: none;
 
@@ -147,13 +135,13 @@ input[class~="table__cell"]:focus {
   background-color: transparent;
   border: none;
   order: 1;
-
+  color: var(--text);
   position: relative;
+  text-align: center;
+  padding: 0;
 }
 
-.table__cell-button:hover::after,
-[data-axis]:focus ~ .table__cell-button::after,
-[data-axis]:hover ~ .table__cell-button::after {
+[data-axis]:focus ~ .table__cell-button::after {
   content: "X";
 
   display: grid;
@@ -167,6 +155,28 @@ input[class~="table__cell"]:focus {
 
   font-weight: bold;
   background-color: var(--warning);
+}
+
+@media (hover: hover) {
+  .table__cell:hover {
+    background-color: var(--primary-100);
+  }
+  .table__cell-button:hover::after,
+  [data-axis]:hover ~ .table__cell-button::after {
+    content: "X";
+
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-weight: bold;
+    background-color: var(--warning);
+  }
 }
 
 .table__cell-button:active::after {

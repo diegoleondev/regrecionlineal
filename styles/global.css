@@ -54,6 +54,27 @@ body {
 
   background-color: var(--primary);
 }
+
+/* BUTTON ------------------------------------------------------------------- */
+button {
+  outline: none;
+  border: none;
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+button:active {
+  box-shadow: inset 0px 0px 4px 1px #0009;
+}
+
+@media (hover: hover) {
+  button:hover {
+    opacity: 0.9;
+  }
+}
 /* ICONS -------------------------------------------------------------------- */
 [class^="icon-"] {
   width: 44px;

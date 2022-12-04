@@ -109,16 +109,33 @@ export default function drawnGraph(cordinates) {
   /* Trazado de Linea */
   function drawnLine(x1, y1, x2, y2) {
     const pX1 = ((x1 * dialSize) / maxX) * u;
-    const pY1 = dialSizeU - ((y1 * dialSize) / maxY) * u;
+    let pY1 = ((y1 * dialSize) / maxY) * u;
 
     const pX2 = ((x2 * dialSize) / maxX) * u;
-    const pY2 = dialSizeU - ((y2 * dialSize) / maxY) * u;
+    let pY2 = ((y2 * dialSize) / maxY) * u;
+
+    const teta = Math.atan((pY2 - pY1) / pX2);
+    const co = Math.tan(teta) * 80 * u;
+    const h = Math.sqrt(Math.pow(80 * u, 2) + Math.pow(co, 2));
+
+    pY1 = dialSizeU - pY1;
+    pY2 = dialSizeU - pY2;
+
+    ctx.save();
+    ctx.translate(pX1 + margin, pY1);
+    ctx.rotate(-teta);
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "blue";
+    ctx.moveTo(0, 0);
+    ctx.lineTo(h, 0);
+    ctx.stroke();
+    ctx.restore();
 
     ctx.beginPath();
-    ctx.strokeStyle = "blue";
-    ctx.moveTo(pX1 + margin, pY1);
-    ctx.lineTo(pX2 + margin, pY2);
-    ctx.stroke();
+    ctx.fillStyle = "green";
+    ctx.arc(pX2 + margin, pY2, 6, 0, 2 * Math.PI);
+    ctx.fill();
   }
 
   return { drawnLine };

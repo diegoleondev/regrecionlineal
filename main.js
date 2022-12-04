@@ -59,7 +59,7 @@ function handleCalculate() {
     $probability.value
   );
 
-  drawnGraph(cordinates);
+  drawnGraph(cordinates).drawnLine(0, a, parseFloat($probability.value, 10), y);
 
   drawn($operations);
 }
