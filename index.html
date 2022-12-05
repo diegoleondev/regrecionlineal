@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <title>Regrecion Lineal - Calculadora</title>
 
     <!-- SEO -->
     <meta charset="UTF-8" />
     <meta name="robots" content="index, nofollow" />
     <meta name="copyright" content="Diego Leon © 2022" />
-    <link rel="canonical" href="www.regrecionlineal.ml" />
+    <link rel="canonical" href="regrecionlineal.ml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- SEO inf -->
-    <meta name="author" content="Joshua y Diego Leon" />
+    <meta name="author" content="Brian Joshua y Diego Leon" />
     <meta
       name="description"
       content="Calculadora para la regrecion Lineal simple"
@@ -32,22 +31,26 @@
       content="Calculadora para la regrecion Lineal simple"
     />
     <meta property="og:image" content="https://i.ibb.co/PgCTjjp/image.png" />
-    <meta property="og:url" content="www.regrecionlineal.ml" />
+    <meta property="og:url" content="regrecionlineal.ml" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@dalldev" />
 
     <!-- Loading -->
-    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <script id="MathJax-script" async src="lib/MathJax.js"></script>
   </head>
   <body>
     <nav class="navbar">
-      <a href="pages/home.html"><i class="icon-home"></i></a>
-      <a href="index.html"><i class="icon-calculator"></i></a>
-      <a href="pages/about.html"><i class="icon-github"></i></a>
+      <a title="Inicio" href="pages/home.html"><i class="icon-home"></i></a>
+      <a title="Calculadora" href="index.html"
+        ><i class="icon-calculator"></i
+      ></a>
+      <a title="Acerca de" href="pages/about.html"
+        ><i class="icon-github"></i
+      ></a>
     </nav>
-    <article class="article article-dashboard">
+    <article class="main article-dashboard">
       <section id="top-section" class="top-section section">
         <h1>Regrecion Lineal</h1>
       </section>
@@ -55,7 +58,7 @@
         <p>Ingrese los datos solicitados:</p>
         <label class="bold">
           Probabilidad:
-          <input id="probability" type="number" class="input" />
+          <input id="probability" type="number" class="input" placeholder="X" />
         </label>
         <div id="table-container" class="table">
           <div class="table__row">

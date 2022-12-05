@@ -2,6 +2,7 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
@@ -10,10 +11,23 @@ input {
   outline: none;
 }
 
+label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+
+  color: black;
+}
+
 input[type="number"] {
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
   font-size: inherit;
-
+  text-indent: 0.5em;
+  width: 100%;
+  display: inline;
   background-color: transparent;
 }
 
@@ -40,12 +54,6 @@ i {
   position: relative;
 }
 
-.article {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0.5em;
-}
-
 .article-dashboard {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -57,14 +65,6 @@ i {
 
 .top-section {
   grid-area: top-section;
-}
-.section {
-  padding: 1em;
-
-  background-color: var(--secondary);
-
-  box-shadow: var(--shadow);
-  border-radius: 0.5em;
 }
 
 .section-input {
@@ -120,9 +120,6 @@ i {
   justify-content: center;
   align-items: center;
   color: black;
-
-  text-align: left;
-  text-indent: 1em;
 }
 
 input[class~="table__cell"]:focus {
@@ -181,4 +178,25 @@ input[class~="table__cell"]:focus {
 
 .table__cell-button:active::after {
   background-color: var(--danger);
+}
+
+@media (max-width: 950px) {
+  .article-dashboard {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: "top-section" "inputs" "print";
+  }
+
+  #canvas {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .operations {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 }

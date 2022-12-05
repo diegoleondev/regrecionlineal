@@ -1,16 +1,4 @@
-.hero-content {
-  width: 100%;
-  max-width: 900px;
-  height: 100%;
-
-  margin: auto;
-}
-
-.hero-content section {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  background-color: var(--secondary);
-  padding: 1em;
+.section {
+  max-width: 800px;
+  height: auto;
 }

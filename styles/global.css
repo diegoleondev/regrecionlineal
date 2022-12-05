@@ -36,8 +36,10 @@ body {
 
   display: grid;
   grid-template-columns: 50px 1fr;
+  grid-template-rows: 100vh 100vh;
 
   background-color: var(--primary-100);
+  overflow-wrap: break-word;
 }
 
 .navbar {
@@ -55,23 +57,51 @@ body {
   background-color: var(--primary);
 }
 
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+
+  background-color: var(--secondary);
+
+  box-shadow: var(--shadow);
+  border-radius: 0.5em;
+}
+
 /* BUTTON ------------------------------------------------------------------- */
-button {
+.button {
   outline: none;
   border: none;
-  padding: 1em;
+  padding: 0.5em;
   border-radius: 0.5em;
   background-color: var(--primary);
   color: var(--secondary);
   font-weight: bold;
+  text-decoration: none;
+  text-align: center;
 }
 
-button:active {
+.button:active {
   box-shadow: inset 0px 0px 4px 1px #0009;
 }
 
 @media (hover: hover) {
-  button:hover {
+  .button:hover {
     opacity: 0.9;
   }
 }
@@ -122,29 +152,53 @@ button:active {
   background-image: url(../assets/house-fill.svg);
 }
 
+/* DECORACIONES ------------------------------------------------------------- */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+span {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5em;
+}
+
+/* CARD --------------------------------------------------------------------- */
+.card {
+  background-color: var(--primary-200);
+
+  color: var(--text);
+  padding: 1em;
+  border-radius: 1em;
+
+  font-size: 0.8em !important;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.tags li {
+  list-style: none;
+  display: grid;
+  place-content: center;
+}
+
+.tag {
+  background-color: var(--secondary);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  text-align: center;
+}
 /* RESPONSIVE --------------------------------------------------------------- */
 
 @media (max-width: 950px) {
   body {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px max-content;
-  }
-
-  .article-dashboard {
-    height: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, max-content);
-    grid-template-areas: "top-section" "inputs" "print";
-  }
-
-  #canvas {
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
-  .operations {
-    width: 100%;
-
-    overflow-x: auto;
-    overflow-y: hidden;
+    grid-template-rows: 50px calc(100vh - 50px);
   }
 }
