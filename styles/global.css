@@ -42,6 +42,10 @@ body {
   overflow-wrap: break-word;
 }
 
+li {
+  margin: 0.5em 1em;
+}
+
 .navbar {
   width: 100%;
   height: 100%;
@@ -163,6 +167,14 @@ span {
   flex-direction: column;
 
   gap: 0.5em;
+}
+
+.callout {
+  display: block;
+  background-color: var(--primary-100);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin: 0.5em 0;
 }
 
 /* CARD --------------------------------------------------------------------- */

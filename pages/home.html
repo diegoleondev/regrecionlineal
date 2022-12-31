@@ -21,8 +21,8 @@
     <link rel="apple-touch-icon" href="./assets/icon.ico" />
 
     <!-- Social -->
-    <meta property="og:title" content="Regrecion Lineal - Acerca de" />
-    <meta property="og:description" content="¿Que es la Regrecion Lineal?" />
+    <meta property="og:title" content="Regrecion Lineal - Inicio" />
+    <meta property="og:description" content="¿Qué es la regresión lineal? ¿Como calcular la regresión lineal? " />
     <meta property="og:image" content="https://i.ibb.co/PgCTjjp/image.png" />
     <meta property="og:url" content="regrecionlineal.ml" />
     <meta name="twitter:card" content="summary" />
@@ -30,6 +30,7 @@
     <!-- REL -->
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/home.css" />
+    <script id="MathJax-script" async src="../lib/MathJax.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -43,40 +44,101 @@
       <section class="section">
         <h1>Regrecion Lineal 📈</h1>
         <span>
-          <h2>Refactorizando información</h2>
-          <!-- <h2>¿Qué es?</h2>
+          <h2>¿Qué es la regresión lineal?</h2>
           <p>
-            El análisis de la regresión lineal es una técnica estadística que se
-            usa con el objetivo de predecir el comportamiento de una variable
-            dependiente, en función de su interacción con una variable
-            independiente. En otras palabras, se trata de determinar qué pasará
-            con Y si X adopta determinado valor. <br /><br />
-            Esta es la técnica más utilizada para estimar o investigar la
-            relación entre variables dependientes y un conjunto de variables
-            independientes. <br /><br />
-            En el modelo de regresión lineal, la variable dependiente funciona
-            como predictor o elemento explicativo, mientras que la variable
-            dependiente es la respuesta a una consulta específica.
-          </p>
-        </span>
+            La regresión lineal es una técnica estadística que se utiliza para
+            encontrar la relación entre dos variables. La regresión lineal trata
+            de encontrar la línea que mejor se ajuste a un conjunto de puntos en
+            un gráfico. Esta línea se llama recta de regresión y representa la
+            tendencia de los datos. <br /><br />
 
-        <span>
-          <h2>¿Para qué sirve la regresión lineal?</h2>
-          <p>
-            Los modelos de regresión lineal son bastante sencillos y ofrecen una
-            fórmula matemática fácil de interpretar, y que, además, puede
-            generar predicciones. <br /><br />
-            Así, los modelos de regresión lineal han ocupado un lugar
-            privilegiado en la predicción del futuro de forma científica y
-            confiable. <br /><br />
-            De esto se deduce que sirve para un sinnúmero de fines. Por ejemplo,
-            permite a los líderes de empresas tomar mejores decisiones a la hora
-            de gestionar sus compañías. También, ayuda a las organizaciones a
-            utilizar datos para gestionar mejor su realidad y no depender solo
-            de la experiencia y la intuición. Realmente, esta técnica permite
-            tomar grandes cantidades de datos sin procesar y convertirlos en
-            información accesible.
-          </p> -->
+            La regresión lineal se utiliza para predecir el valor de una
+            variable en función del valor de otra variable. Por ejemplo, se
+            puede utilizar para predecir el salario de una persona en función de
+            su nivel de educación, o para predecir el precio de una casa en
+            función de su tamaño. <br /><br />
+
+            Para realizar un análisis de regresión lineal, se necesitan dos
+            variables: una variable dependiente y una variable independiente. La
+            variable dependiente es la que se quiere predecir, y la variable
+            independiente es la que se utiliza para hacer la predicción. La
+            recta de regresión se construye a partir de los datos de ambas
+            variables, y se puede utilizar para hacer predicciones sobre la
+            variable dependiente para valores de la variable independiente que
+            no se hayan medido. <br /><br />
+          </p>
+
+          <h2>¿Como calcular la regresión lineal?</h2>
+
+          <span>
+            Para calcular la regresión lineal de dos variables, puedes seguir
+            estos pasos:
+
+            <ol>
+              <li>
+                Escribe las coordenadas (x, y) de cada uno de los puntos que
+                quieres incluir en el análisis de regresión lineal. La variable
+                x será la variable independiente y la variable y será la
+                variable dependiente.
+              </li>
+
+              <li>
+                Calcula la media aritmética de cada una de las variables x e y.
+              </li>
+
+              <li>
+                Calcula la diferencia entre cada punto y la media de su
+                variable. Por ejemplo, para cada punto (x, y), calcula x -
+                media(x) y y - media(y).
+              </li>
+
+              <li>
+                Calcula el producto de las diferencias obtenidas en el paso
+                anterior. Por ejemplo, para cada punto (x, y), calcula (x -
+                media(x)) * (y - media(y)).
+              </li>
+
+              <li>
+                Calcula el cuadrado de cada una de las diferencias obtenidas en
+                el paso 2. Por ejemplo, para cada punto (x, y), calcula (x -
+                media(x))^2 y (y - media(y))^2.
+              </li>
+
+              <li>
+                Utiliza la siguiente fórmula para calcular el coeficiente de
+                correlación entre x e y: <br />
+                <span class="callout"
+                  >r = sumatorio de (x - media(x)) * (y - media(y)) /
+                  sqrt(sumatorio de (x - media(x))^2 * (y - media(y))^2)</span
+                >
+              </li>
+
+              <li>
+                Utiliza la siguiente fórmula para calcular el valor de la
+                pendiente de la recta de regresión: <br />
+
+                <span class="callout"></span>
+                  pendiente = r * (desviación típica de y) / (desviación típica
+                  de x)</span
+                >
+              </li>
+
+              <li>
+                Utiliza la siguiente fórmula para calcular el valor del
+                intercepto de la recta de regresión:
+
+                <span class="callout"
+                  >intercepto = media(y) - pendiente * media(x)</span
+                >
+              </li>
+
+              <li>
+                Una vez que hayas calculado la pendiente y el intercepto, puedes
+                escribir la ecuación de la recta de regresión de la forma y = mx
+                + b, donde m es la pendiente y b es el intercepto.
+              </li>
+            </ol>
+          </span>
         </span>
       </section>
     </article>
